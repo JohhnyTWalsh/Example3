@@ -5,9 +5,9 @@ public class Exercise4 {
     public static void main(String args[])
     {
 
-        String name, Str1, Uppercase;
-        char Initial;
-        int nameLength = 0, counter=0;
+        String name, Str1, Uppercase, Str2;
+        char Initial, Initial2;
+        int nameLength = 0, counter=0,v, k, counter2=0, LengthName;
 
 
 
@@ -18,22 +18,26 @@ public class Exercise4 {
         name = j.nextLine();
         nameLength = name.length();
         Str1 = name;
-
+        Str2 = name;
         Initial = name.charAt(0);
 
         Uppercase = name.toUpperCase();
 
-        for(int v = name.lastIndexOf(' ');nameLength < counter; counter++)
+        for(v = name.lastIndexOf(' ');nameLength < counter; counter++)
         {
-            if(counter > v)
-            {
 
+        }
+        for(k = 0; k < name.length();k++)
+        {Initial2 = name.charAt(k);
+            if(Initial2 == ' ')
+            {
+                counter2++;
             }
         }
 
-
-        System.out.println("\nThe length of your name is: " + Str1.length() +"\nThe first initial is: " +Initial +
-                "\nYour name in Uppercase: " + Uppercase);
+       LengthName =  (Str1.length() - counter2);
+        System.out.println("\nThe length of your name is: " + LengthName +"\nThe first initial is: " +Initial +
+                "\nYour name in Uppercase: " + Uppercase + "\nYour last surname is: " + Str2.substring(v+1,nameLength));
     }
 }
 
